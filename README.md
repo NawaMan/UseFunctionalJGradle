@@ -1,0 +1,2 @@
+# UseFunctionalJGradle
+Example for FunctionalJ
