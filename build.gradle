@@ -11,7 +11,6 @@ repositories {
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
     
-    compile 'functionalj:functionalj-annotations:0.1.59.0'
     compile 'functionalj:functionalj-core:0.1.59.0'
     
     testCompile 'junit:junit:4.12'
