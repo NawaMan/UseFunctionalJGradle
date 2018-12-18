@@ -2,7 +2,7 @@
 
 ![alt "Build status"](https://travis-ci.org/NawaMan/UseFunctionalJGradle.svg?branch=master)
 
-Example of how to use FunctionalJ in a Gradle project.
+Example of how to use ![alt "FunctionalJ"](https://github.com/NawaMan/FunctionalJ) in a Gradle project.
 
 It basically boils down to adding the required maven repository (hosted by github).
 
