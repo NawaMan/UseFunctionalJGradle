@@ -6,9 +6,9 @@ import static use.functionalj.gradle.Order.theOrder;
 
 import java.math.BigDecimal;
 
-import functionalj.annotations.Choice;
-import functionalj.annotations.Nullable;
-import functionalj.annotations.Struct;
+import functionalj.types.Choice;
+import functionalj.types.Nullable;
+import functionalj.types.Struct;
 import functionalj.list.FuncList;
 import lombok.val;
 
@@ -18,7 +18,7 @@ public class TryStruct {
     
     @Struct void Buyer(String name, Province province) {}
     
-    @functionalj.annotations.Struct static interface OrderSpec {
+    @Struct static interface OrderSpec {
         Buyer buyer();
         FuncList<Item> items();
         
