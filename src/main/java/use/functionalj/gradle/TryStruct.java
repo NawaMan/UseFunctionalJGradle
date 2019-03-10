@@ -5,6 +5,7 @@ import static use.functionalj.gradle.Item.theItem;
 import static use.functionalj.gradle.Order.theOrder;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 import functionalj.types.Choice;
 import functionalj.types.Nullable;
@@ -16,7 +17,7 @@ public class TryStruct {
     
     @Struct void Item(String name, @Nullable String description, BigDecimal price) {}
     
-    @Struct void Buyer(String name, Province province) {}
+    @Struct void Buyer(String name, Province province, LocalDate date) {}
     
     @functionalj.types.Struct static interface OrderSpec {
         Buyer buyer();
@@ -55,8 +56,8 @@ public class TryStruct {
     }
     
     public static void main(String[] args) {
-        val buyer1 = new Buyer("Smith",   Province.ON);
-        val buyer2 = new Buyer("Johnson", Province.SK);
+        val buyer1 = new Buyer("Smith",   Province.ON, LocalDate.of(2019, 3,  10));
+        val buyer2 = new Buyer("Johnson", Province.SK, LocalDate.of(2019, 10,  3));
         val order1 = new Order(buyer1, listOf(
                 new Item("iPad",  new BigDecimal(500)),
                 new Item("Case",  new BigDecimal(20))
@@ -70,6 +71,7 @@ public class TryStruct {
         System.out.println(orders.filter(theOrder.buyer.province.thatEquals(Province.ON)));
         System.out.println(orders.groupingBy(theOrder.buyer.province));
         System.out.println(orders.map(Order::total));
+        System.out.println(orders.groupingBy(theOrder.buyer.date.month));
     }
     
 }
