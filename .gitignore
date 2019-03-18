@@ -4,6 +4,8 @@
 # generated files
 bin/
 gen/
+out/
+src/main/.apt_generated
 
 # Local configuration file (sdk path, etc)
 local.properties
