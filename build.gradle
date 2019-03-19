@@ -9,6 +9,14 @@ repositories {
     maven { url 'https://raw.githubusercontent.com/nawaman/nawaman-maven-repository/master/' }
 }
 
+sourceSets {
+    main {
+        java {
+            srcDir "${buildDir.absolutePath}/.apt_generated"
+        }
+    }
+}
+
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
     
