@@ -19,7 +19,7 @@ public class TryStruct {
     
     @Struct void Buyer(String name, Province province, LocalDate date) {}
     
-    @functionalj.types.Struct static interface OrderSpec {
+    @Struct static interface OrderSpec {
         Buyer buyer();
         FuncList<Item> items();
         

@@ -1,8 +1,6 @@
 package use.functionalj.gradle;
 
 import functionalj.types.Choice;
-import functionalj.types.DefaultTo;
-import functionalj.types.DefaultValue;
 import functionalj.types.Nullable;
 import functionalj.types.choice.Self;
 
