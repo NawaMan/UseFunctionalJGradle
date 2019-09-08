@@ -6,7 +6,6 @@ apply plugin: 'eclipse'
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { url 'https://raw.githubusercontent.com/nawaman/nawaman-maven-repository/master/' }
 }
 
 sourceSets {
@@ -20,7 +19,19 @@ sourceSets {
 dependencies {
     compile 'org.slf4j:slf4j-api:1.7.21'
     
-    compile 'functionalj:functionalj-all:0.1.73.0'
+    compile             'io.functionalj:functionalj-all:0.2.1.0'
+    annotationProcessor 'io.functionalj:functionalj-types:0.2.1.0'
+    
+    compileOnly         'org.projectlombok:lombok:1.18.8'
+    annotationProcessor 'org.projectlombok:lombok:1.18.8'
+    
+    // == Test ==
     
     testCompile 'junit:junit:4.12'
+    
+    testCompile             'io.functionalj:functionalj-types:0.2.1.0'
+    testAnnotationProcessor 'io.functionalj:functionalj-types:0.2.1.0'
+    
+    testCompile             'org.projectlombok:lombok:1.18.8'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.8'
 }

@@ -7,10 +7,10 @@ import static use.functionalj.gradle.Order.theOrder;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import functionalj.list.FuncList;
 import functionalj.types.Choice;
 import functionalj.types.Nullable;
 import functionalj.types.Struct;
-import functionalj.list.FuncList;
 import lombok.val;
 
 public class TryStruct {
@@ -19,7 +19,7 @@ public class TryStruct {
     
     @Struct void Buyer(String name, Province province, LocalDate date) {}
     
-    @Struct static interface OrderSpec {
+    @functionalj.types.Struct static interface OrderSpec {
         Buyer buyer();
         FuncList<Item> items();
         

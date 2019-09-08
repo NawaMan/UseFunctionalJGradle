@@ -8,13 +8,13 @@ It basically boils down to adding the required maven repository (hosted by githu
 
 ```Groovy
 repositories {
-    jcenter()
-    maven { url 'https://raw.githubusercontent.com/nawmaman/nawaman-maven-repository/master/' }
+    mavenLocal()
+    mavenCentral()
 }
 
 dependencies {
-    compileOnly 'org.projectlombok:lombok:1.16.16'
-    compile     'functionalj:functionalj-core:0.1.59.0'    // Please look up the lastest version.
+    compile             'io.functionalj:functionalj-all:0.2.1.0'      // Please look up the lastest version.
+    annotationProcessor 'io.functionalj:functionalj-types:0.2.1.0'    // Please look up the lastest version.
 }
 ```
 
