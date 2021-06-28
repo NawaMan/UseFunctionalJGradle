@@ -1,10 +1,10 @@
 package use.functionalj.gradle;
 
 import static functionalj.function.Func.f;
-import static functionalj.stream.StreamPlus.range;
 import static java.util.Arrays.asList;
 import static java.util.Collections.emptyList;
 import static use.functionalj.gradle.Tree.theTree;
+import static functionalj.stream.intstream.IntStreamPlus.range;
 
 import functionalj.types.Choice;
 import functionalj.types.Nullable;

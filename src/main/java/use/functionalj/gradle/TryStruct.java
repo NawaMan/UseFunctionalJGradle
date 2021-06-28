@@ -26,7 +26,8 @@ public class TryStruct {
         default BigDecimal total() {
             val province = buyer().province();
             val total = items ()
-                    .sum   (theItem.price)
+                    .map   (theItem.price)
+                    .reduce(BigDecimal::add)
                     .map   (province::addTax)
                     .orElse(BigDecimal.ZERO);
             return total;
