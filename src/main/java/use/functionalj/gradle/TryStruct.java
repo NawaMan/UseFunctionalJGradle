@@ -11,7 +11,6 @@ import functionalj.list.FuncList;
 import functionalj.types.Choice;
 import functionalj.types.Nullable;
 import functionalj.types.Struct;
-import lombok.val;
 
 public class TryStruct {
     
@@ -24,8 +23,8 @@ public class TryStruct {
         FuncList<Item> items();
         
         default BigDecimal total() {
-            val province = buyer().province();
-            val total = items ()
+            var province = buyer().province();
+            var total = items ()
                     .map   (theItem.price)
                     .reduce(BigDecimal::add)
                     .map   (province::addTax)
@@ -44,7 +43,7 @@ public class TryStruct {
             this.saleTax = saleTax;
         }
         public BigDecimal addTax(BigDecimal subTotal) {
-            val taxPercent = saleTax.match()
+            var taxPercent = saleTax.match()
                     .gstpst(tax -> tax.gstPercent() + tax.pstPercent())
                     .hst   (tax -> tax.percent());
             return subTotal.multiply(new BigDecimal(taxPercent)).divide(new BigDecimal(100));
@@ -57,17 +56,17 @@ public class TryStruct {
     }
     
     public static void main(String[] args) {
-        val buyer1 = new Buyer("Smith",   Province.ON, LocalDate.of(2019, 3,  10));
-        val buyer2 = new Buyer("Johnson", Province.SK, LocalDate.of(2019, 10,  3));
-        val order1 = new Order(buyer1, listOf(
+        var buyer1 = new Buyer("Smith",   Province.ON, LocalDate.of(2019, 3,  10));
+        var buyer2 = new Buyer("Johnson", Province.SK, LocalDate.of(2019, 10,  3));
+        var order1 = new Order(buyer1, listOf(
                 new Item("iPad",  new BigDecimal(500)),
                 new Item("Case",  new BigDecimal(20))
                 ));
-        val order2 = new Order(buyer2, listOf(
+        var order2 = new Order(buyer2, listOf(
                 new Item("MacBook", new BigDecimal(1300)),
                 new Item("Cable",   new BigDecimal(20))
                 ));
-        val orders = listOf(order1, order2);
+        var orders = listOf(order1, order2);
         System.out.println(orders);
         System.out.println(orders.filter(theOrder.buyer.province.thatEquals(Province.ON)));
         System.out.println(orders.groupingBy(theOrder.buyer.province));

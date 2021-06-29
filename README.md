@@ -1,6 +1,6 @@
 # UseFunctionalJGradle
 
-![alt "Build status"](https://travis-ci.org/NawaMan/UseFunctionalJGradle.svg?branch=master)
+![alt "Build status"](https://github.com/NawaMan/UseFunctionalJGradle/actions/workflows/maven.yml/badge.svg)
 
 Example of how to use [FunctionalJ](https://github.com/NawaMan/FunctionalJ) in a Gradle project.
 

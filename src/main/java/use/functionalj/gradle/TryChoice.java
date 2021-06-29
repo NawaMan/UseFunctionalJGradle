@@ -13,7 +13,6 @@ import functionalj.types.choice.Self;
 import functionalj.types.choice.generator.model.Case;
 import functionalj.types.choice.generator.model.CaseParam;
 import functionalj.types.choice.generator.model.SourceSpec;
-import lombok.val;
 
 public class TryChoice {
     
@@ -106,8 +105,8 @@ public class TryChoice {
             emptyList());
     
     public static void main(String[] args) {
-        val tree1 = Tree.Node("2", Tree.Leaf("2"), Tree.Leaf("3"));
-        val is2 = theTree.asNode.get().value.thatEquals("2")
+        var tree1 = Tree.Node("2", Tree.Leaf("2"), Tree.Leaf("3"));
+        var is2 = theTree.asNode.get().value.thatEquals("2")
               .or(theTree.asLeaf.get().value.thatEquals("2"));
         
         System.out.println(is2.apply(tree1));
@@ -116,7 +115,7 @@ public class TryChoice {
         
         System.out.println(range(1, 6).reduce((a,b)->a*b));
         
-        val factorial = f((Integer n) -> range(1, n + 1).reduce((a,b)->a*b).orElse(1));
+        var factorial = f((Integer n) -> range(1, n + 1).reduce((a,b)->a*b).orElse(1));
         System.out.println(factorial.apply(5));
     }
     

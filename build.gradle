@@ -2,7 +2,6 @@ apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'eclipse'
 
-
 repositories {
     mavenLocal()
     mavenCentral()
@@ -17,21 +16,13 @@ sourceSets {
 }
 
 dependencies {
-    compile 'org.slf4j:slf4j-api:1.7.21'
-    
     compile             'io.functionalj:functionalj-all:0.5.1.0'
     annotationProcessor 'io.functionalj:functionalj-types:0.5.1.0'
     
-    compileOnly         'org.projectlombok:lombok:1.18.20'
-    annotationProcessor 'org.projectlombok:lombok:1.18.20'
-    
     // == Test ==
     
-    testCompile 'junit:junit:4.13.2'
+    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
     
     testCompile             'io.functionalj:functionalj-types:0.5.1.0'
     testAnnotationProcessor 'io.functionalj:functionalj-types:0.5.1.0'
-    
-    testCompile             'org.projectlombok:lombok:1.18.20'
-    testAnnotationProcessor 'org.projectlombok:lombok:1.18.20'
 }
