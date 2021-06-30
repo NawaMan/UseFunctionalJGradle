@@ -16,7 +16,7 @@ dependencies {
     
     testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
     
-    testCompile             'io.functionalj:functionalj-types:0.5.1.0'
+    testCompile             'io.functionalj:functionalj-all:0.5.1.0'
     testAnnotationProcessor 'io.functionalj:functionalj-types:0.5.1.0'
 }
 
