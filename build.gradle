@@ -1,18 +1,11 @@
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'eclipse'
+apply plugin: 'idea'
 
 repositories {
     mavenLocal()
     mavenCentral()
-}
-
-sourceSets {
-    main {
-        java {
-            srcDir "${buildDir.absolutePath}/.apt_generated"
-        }
-    }
 }
 
 dependencies {
@@ -21,8 +14,12 @@ dependencies {
     
     // == Test ==
     
-    testCompile 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
+    testImplementation('org.junit.jupiter:junit-jupiter:5.5.2')
     
     testCompile             'io.functionalj:functionalj-types:0.5.1.0'
     testAnnotationProcessor 'io.functionalj:functionalj-types:0.5.1.0'
+}
+
+test {
+    useJUnitPlatform()
 }
