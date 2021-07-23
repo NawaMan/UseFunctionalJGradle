@@ -9,15 +9,15 @@ repositories {
 }
 
 dependencies {
-    compile             'io.functionalj:functionalj-all:0.5.2.0'
-    annotationProcessor 'io.functionalj:functionalj-types:0.5.2.0'
+    compile             'io.functionalj:functionalj-all:0.5.5.0'
+    annotationProcessor 'io.functionalj:functionalj-types:0.5.5.0'
     
     // == Test ==
     
     testImplementation('org.junit.jupiter:junit-jupiter:5.7.1')
     
-    testCompile             'io.functionalj:functionalj-all:0.5.2.0'
-    testAnnotationProcessor 'io.functionalj:functionalj-types:0.5.2.0'
+    testCompile             'io.functionalj:functionalj-all:0.5.5.0'
+    testAnnotationProcessor 'io.functionalj:functionalj-types:0.5.5.0'
 }
 
 test {
