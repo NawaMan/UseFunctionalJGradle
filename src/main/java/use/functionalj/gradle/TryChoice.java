@@ -2,17 +2,11 @@ package use.functionalj.gradle;
 
 import static functionalj.function.Func.f;
 import static functionalj.stream.intstream.IntStreamPlus.range;
-import static java.util.Arrays.asList;
-import static java.util.Collections.emptyList;
 import static use.functionalj.gradle.Tree.theTree;
 
 import functionalj.types.Choice;
 import functionalj.types.Nullable;
-import functionalj.types.Type;
-import functionalj.types.choice.Self;
-import functionalj.types.choice.generator.model.Case;
-import functionalj.types.choice.generator.model.CaseParam;
-import functionalj.types.choice.generator.model.SourceSpec;
+import functionalj.types.Self;
 
 public class TryChoice {
     
@@ -73,37 +67,18 @@ public class TryChoice {
         void Fahrenheit(double fahrenheit);
         
         default Temperature.Fahrenheit toFahrenheit(Self self) {
-            Temperature temp = self.unwrap();
+        	var temp = (Temperature)self.unwrap();
             return temp.match()
                     .celsius   (c -> Temperature.Fahrenheit(c.celsius()*1.8 + 32.0))
                     .fahrenheit(f -> f);
         }
         default Temperature.Celsius toCelsius(Self self) {
-            Temperature temp = self.unwrap();
+            var temp = (Temperature)self.unwrap();
             return temp.match()
                     .celsius   (c -> c)
                     .fahrenheit(f -> Temperature.Celsius((f.fahrenheit() - 32.0)/1.8));
         }
     }
-    
-    public static final SourceSpec spec = new SourceSpec(
-            "Command",
-            new Type("use.functionalj.gradle", "TryChoice", "CommandSpec", emptyList()),
-            "spec",
-            false,
-            null,
-            null,
-            emptyList(),
-            asList(
-                new Case("Forward", null, asList(
-                        new CaseParam("distance", new Type(null, null, "int", emptyList()), true, null))),
-                new Case("Backward", null, asList(
-                        new CaseParam("distance", new Type(null, null, "int", emptyList()), true, null))), 
-                new Case("Turn", null, asList(
-                        new CaseParam("angle", new Type(null, null, "int", emptyList()), true, null))), 
-                new Case("Explode", null, emptyList())), 
-            emptyList(), 
-            emptyList());
     
     public static void main(String[] args) {
         var tree1 = Tree.Node("2", Tree.Leaf("2"), Tree.Leaf("3"));

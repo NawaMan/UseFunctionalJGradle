@@ -13,8 +13,8 @@ repositories {
 }
 
 dependencies {
-    compile             'io.functionalj:functionalj-all:1.0.19'      // Please look up the lastest version.
-    annotationProcessor 'io.functionalj:functionalj-types:1.0.19'    // Please look up the lastest version.
+    compile             'io.functionalj:functionalj-all:1.0.25'      // Please look up the lastest version.
+    annotationProcessor 'io.functionalj:functionalj-types:1.0.25'    // Please look up the lastest version.
 }
 ```
 

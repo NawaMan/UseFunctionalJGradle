@@ -20,13 +20,13 @@ repositories {
 }
 
 dependencies {
-    implementation      'io.functionalj:functionalj-all:1.0.19'
-    annotationProcessor 'io.functionalj:functionalj-types:1.0.19'
+    implementation      'io.functionalj:functionalj-all:1.0.25'
+    annotationProcessor 'io.functionalj:functionalj-types:1.0.25'
     
     // == Test ==
     testImplementation      'org.junit.jupiter:junit-jupiter:5.7.1'
-    testImplementation      'io.functionalj:functionalj-all:1.0.19'
-    testAnnotationProcessor 'io.functionalj:functionalj-types:1.0.19'
+    testImplementation      'io.functionalj:functionalj-all:1.0.25'
+    testAnnotationProcessor 'io.functionalj:functionalj-types:1.0.25'
 }
 
 tasks.test {
